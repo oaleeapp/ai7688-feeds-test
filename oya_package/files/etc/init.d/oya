@@ -1,0 +1,11 @@
+#!/bin/sh /etc/rc.common
+
+START=10
+
+start()
+{
+	sh /Oya/main.sh
+}
+boot() {
+  sh /Oya/main.sh
+}
