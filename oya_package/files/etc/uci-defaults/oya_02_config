@@ -18,7 +18,8 @@ uci set wireless.ap.seq="$SEQ"
 
 [ -n "${KEY}" ] && {
 	uci set wireless.ap.encryption='psk2'
-	uci set wireless.ap.key="oyalabs"
+	uci set wireless.ap.key='oyalabs'
+  mkdir /root/testing
 }
 
 uci commit wireless
