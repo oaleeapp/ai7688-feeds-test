@@ -8,5 +8,5 @@ start()
 }
 boot() {
 	echo "Starting process" > /root/start.txt
-	sh /Oya/main.sh
+	start
 }
