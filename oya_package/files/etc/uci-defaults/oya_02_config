@@ -16,11 +16,8 @@ SEQ=`fw_printenv -n wifi_seq`
 uci set wireless.ap.ssid="$SSID"
 uci set wireless.ap.seq="$SEQ"
 
-[ -n "${KEY}" ] && {
-	uci set wireless.ap.encryption='psk2'
-	uci set wireless.ap.key='oyalabs'
-  mkdir /root/testing
-}
+uci set wireless.ap.encryption='psk2'
+uci set wireless.ap.key='oyalabs'
 
 uci commit wireless
 uci commit
