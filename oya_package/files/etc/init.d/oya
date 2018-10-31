@@ -7,6 +7,5 @@ start() {
 	sh /Oya/main.sh
 }
 boot() {
-	echo "Boot function runs" > /root/start.txt
 	/etc/init.d/oya enable
 }
