@@ -1,0 +1,6 @@
+#!bin/sh
+
+#Give permission for init.d scrips for Oya
+chmod +x /etc/init.d/oya
+
+exit 0

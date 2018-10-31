@@ -1,4 +1,0 @@
-#!bin/sh
-
-chmod +x /etc/init.d/oya
-exit 0
