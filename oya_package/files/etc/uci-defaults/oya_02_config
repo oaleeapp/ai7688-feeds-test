@@ -21,4 +21,6 @@ uci set wireless.ap.key='oyalabs'
 
 uci commit wireless
 uci commit
+
+wifi_mode ap
 exit 0
