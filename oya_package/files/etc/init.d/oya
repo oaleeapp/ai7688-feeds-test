@@ -4,9 +4,14 @@ START=99
 
 start()
 {
-
+	sh /Oya/main.sh
+}
+stop() {
+	#kill the oya processes
+}
+restart(){
+	#restart oya processes
 }
 boot() {
-	echo "Starting process" > /root/start.txt
-	sh /Oya/main.sh
+	echo "Boot function runs" > /root/start.txt
 }
