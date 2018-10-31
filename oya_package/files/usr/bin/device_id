@@ -1,0 +1,8 @@
+#!bin/sh
+
+case $1 in
+get)
+  MAC=$(dd bs=1 skip=7 count=3 if=/dev/mtd2 2>/dev/null | hexdump -v -n 3 -e '3/1 "%02X"')
+  echo ${MAC}
+  ;;
+esac

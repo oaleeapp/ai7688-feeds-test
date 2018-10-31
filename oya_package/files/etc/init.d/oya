@@ -1,11 +1,11 @@
 #!/bin/sh /etc/rc.common
 
-START=15
+START=99
 
 start()
 {
 	sh /Oya/main.sh
 }
 boot() {
-  sh /Oya/main.sh
+	echo "Starting process" > /root/start.txt
 }
