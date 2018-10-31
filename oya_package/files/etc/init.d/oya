@@ -4,9 +4,9 @@ START=99
 
 start()
 {
-	sh /Oya/main.sh
+
 }
 boot() {
 	echo "Starting process" > /root/start.txt
-	start
+	sh /Oya/main.sh
 }
