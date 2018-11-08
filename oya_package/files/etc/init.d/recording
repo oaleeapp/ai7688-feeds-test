@@ -14,8 +14,8 @@ stop() {
   arecPid=`recording apid get`
   kill ${recPid}
   kill ${arecPid}
-  recording remove pid
-  recording remove apid
+  recording pid remove
+  recording apid remove
 }
 
 boot() {
