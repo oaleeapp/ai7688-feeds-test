@@ -1,0 +1,30 @@
+#!/bin/sh
+
+case $1 in
+mute)
+  case $2 in
+  get)
+    mute=`cat /Oya/state/mute`
+    echo ${mute}
+    ;;
+  set)
+    mute=$3
+    echo ${mute} > /Oya/state/mute
+    ;;
+  esac
+  ;;
+islinked)
+  case $2 in
+  get)
+    islinked=`cat /Oya/state/islinked`
+    echo ${islinked}
+    ;;
+  set)
+    islinked=$3
+    echo ${islinked} > /Oya/state/islinked
+    ;;
+  esac
+commit)
+  /etc/init.d/recording restart
+  ;;
+esac

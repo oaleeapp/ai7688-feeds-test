@@ -4,16 +4,24 @@ START=99
 STOP=99
 
 start() {
-  if [ ! -f /Oya/pid/recording ]; then
-    sh /Oya/recording.sh
+  islinked=`state islinked get`
+  mute=`state mute get`
+  echo "islinked ${islinked}"
+  echo "mute ${mute}"
+  if [ ${islinked} == "1" ]; then
+    if [ ${mute} == "0" ]; then
+      if [ ! -f /Oya/pid/recording ]; then
+        sh /Oya/recording.sh
+      fi
+    fi
   fi
 }
 
 stop() {
   recPid=`recording pid get`
   arecPid=`recording apid get`
-  kill ${recPid}
-  kill ${arecPid}
+  kill -9 ${recPid}
+  kill -9 ${arecPid}
   recording pid remove
   recording apid remove
 }
