@@ -67,4 +67,7 @@ apid)
     ;;
   esac
   ;;
+commit)
+  /etc/init.d/recording restart
+  ;;
 esac
