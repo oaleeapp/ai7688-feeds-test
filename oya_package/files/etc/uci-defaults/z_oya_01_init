@@ -2,5 +2,9 @@
 
 #Give permission for init.d scrips for Oya
 chmod +x /etc/init.d/oya
+
 chmod +x /usr/bin/device_id
+
+chmod +x /etc/init.d/recording
+chmod +x /usr/bin/recording
 exit 0

@@ -8,4 +8,7 @@ start() {
 }
 boot() {
 	/etc/init.d/oya enable
+	#create all necessary directories
+	mkdir /Media/SD-P1/recAudio
+	mkdir /Media/SD-P1/uploadAudio
 }

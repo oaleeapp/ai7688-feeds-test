@@ -1,0 +1,24 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+STOP=99
+
+start() {
+  recPid=`recording pid get`
+  if [ ! $recPid == "N" ]; then
+	 sh /Oya/recording.sh
+  fi
+}
+
+stop() {
+  recPid=`recording pid get`
+  arecPid=`recording apid get`
+  kill ${recPid}
+  kill ${arecPid}
+  recording remove pid
+  recording remove apid
+}
+
+boot() {
+	/etc/init.d/recording enable
+}

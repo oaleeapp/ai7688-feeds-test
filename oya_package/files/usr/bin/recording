@@ -1,0 +1,70 @@
+#!/bin/sh
+
+case $1 in
+duration)
+  case $2 in
+  get)
+    duration=`cat /Oya/recording/duration`
+    echo ${duration}
+    ;;
+  set)
+    duration=$3
+    echo ${duration} > /Oya/recording/duration
+    ;;
+  esac
+  ;;
+destination)
+  case $2 in
+  get)
+    destination=`cat /Oya/recording/destination`
+    echo ${destination}
+    ;;
+  set)
+    destination=$3
+    echo ${destination} > /Oya/recording/destination
+    ;;
+  esac
+  ;;
+lastRecordedTime)
+  case $2 in
+  get)
+    lastRecordedTime=`cat /Oya/recording/lastRecordedTime`
+    echo ${lastRecordedTime}
+    ;;
+  set)
+    lastRecordedTime=$3
+    echo ${lastRecordedTime} > /Oya/recording/lastRecordedTime
+    ;;
+  esac
+  ;;
+pid)
+  case $2 in
+  get)
+    pid=`cat /Oya/pid/recording`
+    echo ${pid}
+    ;;
+  set)
+    pid=$3
+    echo ${pid} > /Oya/pid/recording
+    ;;
+  remove)
+    rm /Oya/pid/recording
+    ;;
+  esac
+  ;;
+apid)
+  case $2 in
+  get)
+    apid=`cat /Oya/pid/arecord`
+    echo ${apid}
+    ;;
+  set)
+    apid=$3
+    echo ${apid} > /Oya/pid/arecord
+    ;;
+  remove)
+    rm /Oya/pid/arecord
+    ;;
+  esac
+  ;;
+esac
