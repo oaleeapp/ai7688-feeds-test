@@ -28,4 +28,7 @@ pid)
       ;;
     esac
     ;;
+commit)
+  /etc/init.d/uploading restart
+  ;;
 esac

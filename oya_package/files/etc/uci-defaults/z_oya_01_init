@@ -13,5 +13,4 @@ chmod +x /usr/bin/state
 chmod +x /usr/bin/uploading
 chmod +x /etc/init.d/uploading
 
-
 exit 0
