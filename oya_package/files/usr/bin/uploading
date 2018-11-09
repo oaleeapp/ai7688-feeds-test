@@ -1,0 +1,31 @@
+#!/bin/sh
+
+case $1 in
+uploadURL)
+  case $2 in
+    get)
+      uploadURL=`cat /Oya/uploading/uploadURL`
+      echo ${uploadURL}
+      ;;
+    set)
+      uploadURL=$3
+      echo ${uploadURL} > /Oya/uploading/uploadURL
+      ;;
+    esac
+    ;;
+pid)
+  case $2 in
+    get)
+      pid=`cat /Oya/pid/uploading`
+      echo ${pid}
+      ;;
+    set)
+      pid=$3
+      echo ${pid} > /Oya/pid/uploading
+      ;;
+    remove)
+      rm /Oya/pid/uploading
+      ;;
+    esac
+    ;;
+esac

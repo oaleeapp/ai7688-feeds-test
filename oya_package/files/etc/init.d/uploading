@@ -1,0 +1,23 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+STOP=99
+
+start() {
+  islinked=`state islinked get`
+  if [ ${islinked} == "1" ]; then
+    if [ ! -f /Oya/pid/uploading ]; then
+      sh /Oya/uploading.sh
+    fi
+  fi
+}
+
+stop() {
+  uploadPid=`uploading pid get`
+  kill -9 ${uploadPid}
+  uploading pid remove
+}
+
+boot() {
+	/etc/init.d/uploading enable
+}
