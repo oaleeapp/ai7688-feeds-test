@@ -24,6 +24,7 @@ islinked)
     echo ${islinked} > /Oya/state/islinked
     ;;
   esac
+  ;;
 commit)
   /etc/init.d/recording restart
   ;;
