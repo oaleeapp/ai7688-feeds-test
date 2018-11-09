@@ -7,4 +7,6 @@ chmod +x /usr/bin/device_id
 
 chmod +x /etc/init.d/recording
 chmod +x /usr/bin/recording
+
+chmod +x /usr/bin/state
 exit 0
