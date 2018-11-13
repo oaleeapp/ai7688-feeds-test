@@ -34,4 +34,4 @@ define Package/AWSIoTPythonSDK/install
 		$(1)$(PYTHON_PKG_DIR)/
 endef
 
-$(eval $(call BuildPackage, AWSIoTPythonSDK))
+$(eval $(call BuildPackage,AWSIoTPythonSDK))
