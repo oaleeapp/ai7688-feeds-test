@@ -5,9 +5,12 @@ STOP=99
 
 start() {
   islinked=`state islinked get`
-  if [ ${islinked} == "1" ]; then
-    if [ ! -f /Oya/pid/uploading ]; then
-      sh /Oya/uploading.sh
+  internet_status=`internet_status connected get`
+  if [ ${internet_status} == "1" ]; then
+    if [ ${islinked} == "1" ]; then
+      if [ ! -f /Oya/pid/uploading ]; then
+        sh /Oya/uploading.sh
+      fi
     fi
   fi
 }

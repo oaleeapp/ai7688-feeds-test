@@ -1,0 +1,33 @@
+#!/bin/sh
+
+case $1 in
+connected)
+  case $2 in
+  get)
+    connected=`cat /Oya/internet_status/connected`
+    echo ${connected}
+    ;;
+  set)
+    connected=$3
+    echo ${connected} > /Oya/internet_status/connected
+    ;;
+  esac
+  ;;
+pid)
+  case $2 in
+  get)
+    pid=`cat /Oya/pid/internet_status`
+    echo ${pid}
+    ;;
+  set)
+    pid=$3
+    echo ${pid} > /Oya/pid/internet_status
+    ;;
+  esac
+  ;;
+commit)
+  /etc/init.d/uploading restart
+  /etc/init.d/islinked restart
+  /etc/init.d/mqtt restart
+  ;;
+esac
