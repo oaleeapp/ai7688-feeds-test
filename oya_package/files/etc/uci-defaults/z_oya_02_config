@@ -17,7 +17,7 @@ uci set wireless.ap.ssid="$SSID"
 uci set wireless.ap.seq="$SEQ"
 
 uci set wireless.ap.encryption='psk2'
-uci set wireless.ap.key='oyalabs'
+uci set wireless.ap.key='oyalabs01'
 
 uci commit wireless
 uci commit

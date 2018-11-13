@@ -23,6 +23,8 @@ pid)
     pid=$3
     echo ${pid} > /Oya/pid/internet_status
     ;;
+  remove)
+    rm /Oya/pid/internet_status
   esac
   ;;
 commit)

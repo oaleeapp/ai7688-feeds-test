@@ -12,6 +12,7 @@ start() {
     if [ ${mute} == "0" ]; then
       if [ ! -f /Oya/pid/recording ]; then
         sh /Oya/recording.sh
+        state recording set 1
       fi
     fi
   fi
@@ -24,6 +25,7 @@ stop() {
   kill -9 ${arecPid}
   recording pid remove
   recording apid remove
+  state recording set 0
 }
 
 boot() {

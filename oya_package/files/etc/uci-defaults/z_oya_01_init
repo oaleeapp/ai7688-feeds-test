@@ -13,4 +13,7 @@ chmod +x /usr/bin/state
 chmod +x /usr/bin/uploading
 chmod +x /etc/init.d/uploading
 
+chmod +x /usr/bin/internet_status
+chmod +x /etc/init.d/internet_status
+
 exit 0

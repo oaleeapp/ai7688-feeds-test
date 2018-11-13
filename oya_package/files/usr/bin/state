@@ -25,6 +25,30 @@ islinked)
     ;;
   esac
   ;;
+recording)
+  case $2 in
+  get)
+    recording=`cat /Oya/state/recording`
+    echo ${recording}
+    ;;
+  set)
+    recording=$3
+    echo ${recording} > /Oya/state/recording
+    ;;
+  esac
+  ;;
+uploading)
+  case $2 in
+  get)
+    uploading=`cat /Oya/state/uploading`
+    echo ${uploading}
+    ;;
+  set)
+    uploading=$3
+    echo ${uploading}
+    ;;
+  esac
+  ;;
 commit)
   /etc/init.d/recording restart
   ;;
