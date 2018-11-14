@@ -23,12 +23,17 @@ islinked)
     echo ${islinked}
     ;;
   set)
+    prevState=`cat /Oya/state/islinked`
     islinked=$3
     echo ${islinked} > /Oya/state/islinked
+    if [ ${prevState} == "1" ]; then
+      if [ $3 == "0" ]; then
+        firstboot
+      fi
+    fi
     ;;
   commit)
     sh /Oya/led.sh
-    firstboot
     ;;
   esac
   ;;
