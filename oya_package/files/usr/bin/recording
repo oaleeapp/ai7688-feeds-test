@@ -69,5 +69,6 @@ apid)
   ;;
 commit)
   /etc/init.d/recording restart
+  sh /Oya/led.sh
   ;;
 esac

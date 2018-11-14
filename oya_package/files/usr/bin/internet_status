@@ -31,5 +31,6 @@ commit)
   /etc/init.d/uploading restart
   /etc/init.d/islinked restart
   /etc/init.d/mqtt restart
+  sh /Oya/led.sh
   ;;
 esac

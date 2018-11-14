@@ -11,6 +11,9 @@ mute)
     mute=$3
     echo ${mute} > /Oya/state/mute
     ;;
+  commit)
+    sh /Oya/led.sh
+    /etc/init.d/recording restart
   esac
   ;;
 islinked)
@@ -22,6 +25,10 @@ islinked)
   set)
     islinked=$3
     echo ${islinked} > /Oya/state/islinked
+    ;;
+  commit)
+    sh /Oya/led.sh
+    firstboot
     ;;
   esac
   ;;
@@ -50,6 +57,6 @@ uploading)
   esac
   ;;
 commit)
+  sh /Oya/led.sh
   /etc/init.d/recording restart
-  ;;
 esac
