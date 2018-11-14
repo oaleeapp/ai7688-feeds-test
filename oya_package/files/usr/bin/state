@@ -28,7 +28,7 @@ islinked)
     echo ${islinked} > /Oya/state/islinked
     if [ ${prevState} == "1" ]; then
       if [ $3 == "0" ]; then
-        firstboot
+        yes y | umount /overlay && jffs2reset && reboot
       fi
     fi
     ;;
@@ -64,4 +64,5 @@ uploading)
 commit)
   sh /Oya/led.sh
   /etc/init.d/recording restart
+  ;;
 esac
