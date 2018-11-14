@@ -16,4 +16,9 @@ chmod +x /etc/init.d/uploading
 chmod +x /usr/bin/internet_status
 chmod +x /etc/init.d/internet_status
 
+chmod +x /etc/init.d/mqtt
+chmod +x /usr/bin/mqtt
+
+chmod +x /usr/bin/uarts
+
 exit 0
