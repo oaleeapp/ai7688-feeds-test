@@ -19,6 +19,6 @@ chmod +x /etc/init.d/internet_status
 chmod +x /etc/init.d/mqtt
 chmod +x /usr/bin/mqtt
 
-chmod +x /usr/bin/uarts
+chmod +x /usr/bin/uart
 
 exit 0

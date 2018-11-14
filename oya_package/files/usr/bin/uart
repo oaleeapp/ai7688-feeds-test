@@ -2,6 +2,6 @@
 
 case $1 in
 send)
-  echo -e $2 > /dev/ttyS1
+  echo -e $2 > /dev/ttyS2
   ;;
 esac
