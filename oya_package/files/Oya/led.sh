@@ -5,16 +5,16 @@ internet_status=`internet_status connected get` #2
 recording=`state recording get` #1
 
 led=0
-if [ islinked == "1" ]; then
+if [ ${islinked} == "1" ]; then
   led=$((${led}|8))
 fi
-if [ mute == "1" ]; then
+if [ ${mute} == "1" ]; then
   led=$((${led}|4))
 fi
-if [ internet_status == "1" ]; then
+if [ ${internet_status} == "1" ]; then
   led=$((${led}|2))
 fi
-if [ recording == "1" ]; then
+if [ ${recording} == "1" ]; then
   led=$((${led}|1))
 fi
 
