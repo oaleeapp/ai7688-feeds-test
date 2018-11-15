@@ -11,6 +11,9 @@ mute)
     mute=$3
     echo ${mute} > /Oya/state/mute
     ;;
+  commit)
+    sh /Oya/led.sh
+    /etc/init.d/recording restart
   esac
   ;;
 islinked)
@@ -20,12 +23,49 @@ islinked)
     echo ${islinked}
     ;;
   set)
+    prevState=`cat /Oya/state/islinked`
     islinked=$3
     echo ${islinked} > /Oya/state/islinked
+    if [ ${prevState} == "1" ]; then
+      if [ $3 == "0" ]; then
+        yes | firstboot; reboot
+      fi
+    fi
+    ;;
+  commit)
+    sh /Oya/led.sh
+    /etc/init.d/recording restart
+    /etc/init.d/uploading restart
+    ;;
+  esac
+  ;;
+recording)
+  case $2 in
+  get)
+    recording=`cat /Oya/state/recording`
+    echo ${recording}
+    ;;
+  set)
+    recording=$3
+    echo ${recording} > /Oya/state/recording
+    ;;
+  esac
+  ;;
+uploading)
+  case $2 in
+  get)
+    uploading=`cat /Oya/state/uploading`
+    echo ${uploading}
+    ;;
+  set)
+    uploading=$3
+    echo ${uploading}
     ;;
   esac
   ;;
 commit)
+  sh /Oya/led.sh
   /etc/init.d/recording restart
+  /etc/init.d/uploading restart
   ;;
 esac

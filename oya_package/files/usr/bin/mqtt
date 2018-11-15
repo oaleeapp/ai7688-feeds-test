@@ -1,0 +1,19 @@
+#!/bin/sh
+
+case $1 in
+pid)
+  case $2 in
+  get)
+    pid=`cat /Oya/pid/mqtt`
+    echo ${pid}
+    ;;
+  set)
+    pid=$3
+    echo ${pid} > /Oya/pid/mqtt
+    ;;
+  remove)
+    rm /Oya/pid/mqtt
+    ;;
+  esac
+  ;;
+esac

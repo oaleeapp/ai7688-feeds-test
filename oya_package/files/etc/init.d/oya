@@ -4,8 +4,9 @@ START=99
 STOP=99
 
 start() {
-	sh /Oya/main.sh
+
 }
+
 boot() {
 	/etc/init.d/oya enable
 	#create all necessary directories

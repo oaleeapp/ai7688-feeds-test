@@ -5,9 +5,13 @@ STOP=99
 
 start() {
   islinked=`state islinked get`
-  if [ ${islinked} == "1" ]; then
-    if [ ! -f /Oya/pid/uploading ]; then
-      sh /Oya/uploading.sh
+  internet_status=`internet_status connected get`
+  if [ ${internet_status} == "1" ]; then
+    if [ ${islinked} == "1" ]; then
+      if [ ! -f /Oya/pid/uploading ]; then
+        sh /Oya/uploading.sh
+        state uploading set 1
+      fi
     fi
   fi
 }
@@ -16,6 +20,7 @@ stop() {
   uploadPid=`uploading pid get`
   kill -9 ${uploadPid}
   uploading pid remove
+  state uploading set 0
 }
 
 boot() {

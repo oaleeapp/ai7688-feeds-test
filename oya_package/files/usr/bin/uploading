@@ -30,5 +30,6 @@ pid)
     ;;
 commit)
   /etc/init.d/uploading restart
+  sh /Oya/led.sh
   ;;
 esac
