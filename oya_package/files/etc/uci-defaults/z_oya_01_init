@@ -21,4 +21,7 @@ chmod +x /usr/bin/mqtt
 
 chmod +x /usr/bin/uart
 
+chmod +x /usr/bin/flask_server
+chmod +x /etc/init.d/flask_server
+
 exit 0
