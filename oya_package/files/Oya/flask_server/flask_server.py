@@ -13,10 +13,10 @@ def helloHandler():
 
 @app.route('/list')
 def iwprivScan():
-    subprocess.call(['sh','/root/flask_server/get_aplist.sh'])
+    subprocess.call(['sh','/Oya/flask_server/get_aplist.sh'])
     aplist=[]
     count =0
-    with open('/root/flask_server/APLIST.txt','r') as f:
+    with open('/Oya/flask_server/APLIST.txt','r') as f:
         for line in f:
             if(count == 0):
                 count = count + 1
@@ -69,20 +69,7 @@ def connectToAp():
     bssid = dat['bssid']
     password = dat['pass']
     security = dat['security']
-    subprocess.call(['sh','/root/flask_server/connect_ap.sh',ssid,bssid,password,security])
+    subprocess.call(['sh','/Oya/flask_server/connect_ap.sh',ssid,bssid,password,security])
     return "ok"
 
-@app.route('/status')
-def returnStatus():
-    status={}
-    with open('/root/deviceID', 'r') as f:
-        for line in f:
-            DeviceID=line.split()[0]
-    status['DeviceID']=DeviceID
-    status['FirmwareVersion']="1.0.0"
-    status['DeviceVersion']="1.0.0"
-    status['Tag']="First version: on-boarding, recording, uploading."
-    status['ProductID']="OYA",
-    status['DeviceName']='ORHKU-'+DeviceID
-    return json.dumps(status)
 app.run(host='0.0.0.0',port=8090)
