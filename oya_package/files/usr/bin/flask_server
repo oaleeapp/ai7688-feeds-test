@@ -1,0 +1,19 @@
+#!/bin/sh
+
+case $1 in
+pid)
+  case $2 in
+  get)
+    pid=`cat /Oya/pid/flask_server`
+    echo ${pid}
+    ;;
+  set)
+    pid=$3
+    echo ${pid} > /Oya/pid/flask_server
+    ;;
+  remove)
+    rm /Oya/pid/flask_server
+    ;;
+  esac
+  ;;
+esac

@@ -5,6 +5,11 @@ import sys
 import json
 from flask import request
 
+pid = str(os.getpid())
+pidFile = "/Oya/pid/flask_server"
+
+file(pidFile, 'w').write(pid)
+
 app=Flask(__name__)
 
 @app.route('/hello')
