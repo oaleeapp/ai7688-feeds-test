@@ -1,12 +1,11 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=Jinja
-PKG_VERSION:=1.2
+PKG_NAME:=Jinja2
+PKG_VERSION:=2.10
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://files.pythonhosted.org/packages/df/50/70f41c599cf0ace6c554b07108916513c70d0e950b0abb18c27a865df7a2
-PKG_BUILD_DEPENDS:=python
+PKG_SOURCE_URL:=https://files.pythonhosted.org/packages/56/e6/332789f295cf22308386cf5bbd1f4e00ed11484299c5d7383378cf48ba47
 
 include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python-package.mk)
