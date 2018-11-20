@@ -4,4 +4,42 @@ case $1 in
 send)
   echo -e $2 > /dev/ttyS2
   ;;
+read)
+  uartcommand=`cat /Oya/uart/uartcommand.txt`
+  echo ${uartcommand}
+  ;;
+pid)
+ case $2 in
+   process)
+    case $3 in
+      set)
+      pid=$4
+      echo ${pid} > /Oya/pid/uart_process
+      ;;
+      get)
+      pid=`cat /Oya/pid/uart_process`
+      echo ${pid}
+      ;;
+      remove)
+      rm /Oya/pid/uart_process
+      ;;
+    esac
+    ;;
+   recieve)
+   case $3 in
+     set)
+     pid=$4
+     echo ${pid} > /Oya/pid/uart_recieve
+     ;;
+     get)
+     pid=`cat /Oya/pid/uart_recieve`
+     echo ${pid}
+     ;;
+     remove)
+     rm /Oya/pid/uart_recieve
+     ;;
+   esac
+  ;;
+  esac
+;;
 esac

@@ -1,0 +1,19 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+STOP=99
+
+start() {
+  sh /Oya/uart/uart_recieve.sh
+  sh /Oya/uart/uart_process.sh
+}
+
+stop() {
+  pid=`uart pid get`
+  kill -9 ${pid}
+  uart pid remove
+}
+
+boot() {
+	/etc/init.d/uart enable
+}
