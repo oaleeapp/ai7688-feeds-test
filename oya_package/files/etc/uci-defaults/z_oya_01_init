@@ -20,6 +20,7 @@ chmod +x /etc/init.d/mqtt
 chmod +x /usr/bin/mqtt
 
 chmod +x /usr/bin/uart
+chmod +x /etc/init.d/uart
 
 chmod +x /usr/bin/flask_server
 chmod +x /etc/init.d/flask_server

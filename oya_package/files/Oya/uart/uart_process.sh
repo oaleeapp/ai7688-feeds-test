@@ -1,7 +1,7 @@
 #!/bin/sh
 
 (
-while True
+while true
 do
   uartcommand=`uart read`
   #to see if there are any commands from the MCU
