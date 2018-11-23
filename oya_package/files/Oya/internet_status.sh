@@ -1,11 +1,10 @@
-#!/bin/sh
 
 #!/bin/sh
 
 write_status() {
-  internetStatus=`internet_status get`
-  if[ ${internetStatus} != $1 ]; then
-    internet_status set $2
+  internetStatus=`internet_status connected get`
+  if [ "${internetStatus}" != "$2" ]; then
+    internet_status connected set $2
     internet_status commit
   fi
 }
@@ -13,10 +12,11 @@ write_status() {
 (
 while true
 do
-  case "$(curl -s --max-time 2 -I http://google.com | sed 's/^[^ ]*  *\([0-9]\).*/\1/; 1q')" in
-    [23]) write_status "internet" "1";;
-    5) write_status "internet" "-1";;
-    *) write_status "internet" "0";;
-  esac
+  echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    write_status "internet" "1"
+  else
+    write_status "internet" "0"
+  fi
 done
 ) & internet_status pid set $!
