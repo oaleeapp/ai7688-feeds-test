@@ -166,7 +166,7 @@ time.sleep(2)
 # Publish to the same topic in a loop forever
 loopCount = 0
 topic = "dummyres/status/"+clientId
-while True:i
+while True:
     if args.mode == 'both' or args.mode == 'publish':
         message = {}
         message['DeviceID'] = clientId
