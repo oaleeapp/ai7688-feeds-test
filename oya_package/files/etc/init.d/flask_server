@@ -1,5 +1,8 @@
 #!/bin/sh /etc/rc.common
 
+#Flask server that helps user on-board
+#Must start on boot 
+
 START=99
 STOP=99
 
@@ -15,4 +18,5 @@ stop() {
 
 boot() {
 	/etc/init.d/flask_server enable
+  /etc/init.d/flask_server start
 }
