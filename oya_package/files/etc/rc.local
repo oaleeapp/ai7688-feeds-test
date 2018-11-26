@@ -1,0 +1,6 @@
+#!/bin/sh -e
+state islinked set 1
+state mute set 0
+state commit
+
+exit 0

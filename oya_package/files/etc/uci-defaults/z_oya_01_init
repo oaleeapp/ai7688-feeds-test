@@ -1,6 +1,8 @@
 #!bin/sh
 
 #Give permission for init.d scrips for Oya
+chmod 777 /etc/rc.local
+
 chmod +x /etc/init.d/oya
 
 chmod +x /usr/bin/device_id
