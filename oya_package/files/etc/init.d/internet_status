@@ -1,5 +1,7 @@
 #!/bin/sh /etc/rc.common
 
+#Runs a while loop to check internet status, if changed, it changes the inetrnet_status connected state and restarts the related processes: mqtt, uploading, islinked
+
 START=99
 STOP=99
 
