@@ -168,7 +168,12 @@ loopCount = 0
 topic = "dummyres/status/"+clientId
 while True:
     if args.mode == 'both' or args.mode == 'publish':
-        message = {}
+        message = {
+        'DeviceID':"",
+        'State':{},
+        'Recording':{},
+        'Uploading':{}
+        }
         message['DeviceID'] = clientId
         message['State']['Uploading'] = get_state('uploading')
         message['State']['Recording'] = get_state('recording')
