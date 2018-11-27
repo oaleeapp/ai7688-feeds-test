@@ -59,7 +59,7 @@ uploading)
     ;;
   set)
     uploading=$3
-    echo ${uploading}
+    echo ${uploading} > /Oya/state/uploading
     ;;
   esac
   ;;
