@@ -18,5 +18,5 @@ stop() {
 
 boot() {
 	/etc/init.d/mqtt enable
-  /etc/init.d/mqtt start
+  #/etc/init.d/mqtt start
 }

@@ -17,5 +17,5 @@ stop() {
 
 boot() {
 	/etc/init.d/internet_status enable
-  /etc/init.d/internet_status start
+  #/etc/init.d/internet_status start
 }

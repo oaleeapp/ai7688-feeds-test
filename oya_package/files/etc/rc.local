@@ -3,4 +3,9 @@ state islinked set 1
 state mute set 0
 state commit
 
+internet_state connected set 0
+internet_commit
+
+/etc/init.d/internet_status start
+
 exit 0
