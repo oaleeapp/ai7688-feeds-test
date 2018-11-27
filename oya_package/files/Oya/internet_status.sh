@@ -18,5 +18,6 @@ do
   else
     write_status "internet" "0"
   fi
+  sleep 5
 done
 ) & internet_status pid set $!

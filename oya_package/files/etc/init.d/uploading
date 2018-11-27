@@ -25,4 +25,5 @@ stop() {
 
 boot() {
 	/etc/init.d/uploading enable
+  /etc/init.d/uploading start
 }

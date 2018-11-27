@@ -4,7 +4,10 @@ START=99
 STOP=99
 
 start() {
-  python /Oya/mqtt/mqtt_pubsub.py -e acovoelt8chys.iot.ap-southeast-1.amazonaws.com -r /Oya/mqtt/VeriSign-Class3-Public-Primary-Certification-Authority-G5.pem -c /Oya/mqtt/c50c61ff77-certificate.pem.crt -k /Oya/mqtt/c50c61ff77-private.pem.key -m publish -id `device_id get`
+  internet_status=`internet_status connected get`
+  if [ ${internet_status} == "1" ]; then
+    python /Oya/mqtt/mqtt_pubsub.py -e acovoelt8chys.iot.ap-southeast-1.amazonaws.com -r /Oya/mqtt/VeriSign-Class3-Public-Primary-Certification-Authority-G5.pem -c /Oya/mqtt/c50c61ff77-certificate.pem.crt -k /Oya/mqtt/c50c61ff77-private.pem.key -m publish -id `device_id get`
+  fi
 }
 
 stop() {
@@ -15,4 +18,5 @@ stop() {
 
 boot() {
 	/etc/init.d/mqtt enable
+  /etc/init.d/mqtt start
 }
