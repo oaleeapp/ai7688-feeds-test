@@ -9,9 +9,12 @@ start() {
 }
 
 stop() {
-  pid=`uart pid get`
-  kill -9 ${pid}
-  uart pid remove
+  processpid=`uart pid process get`
+  recievepid=`uart pid recieve get`
+  kill -9 ${processpid}
+  kill -9 ${recievepid}
+  uart pid process remove
+  uart pid recieve remove
 }
 
 boot() {
