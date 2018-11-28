@@ -10,36 +10,17 @@ read)
   ;;
 pid)
  case $2 in
-   process)
-    case $3 in
-      set)
-      pid=$4
-      echo ${pid} > /Oya/pid/uart_process
-      ;;
-      get)
-      pid=`cat /Oya/pid/uart_process`
-      echo ${pid}
-      ;;
-      remove)
-      rm /Oya/pid/uart_process
-      ;;
-    esac
+    set)
+    pid=$4
+    echo ${pid} > /Oya/pid/uart_process
     ;;
-   recieve)
-   case $3 in
-     set)
-     pid=$4
-     echo ${pid} > /Oya/pid/uart_recieve
-     ;;
-     get)
-     pid=`cat /Oya/pid/uart_recieve`
-     echo ${pid}
-     ;;
-     remove)
-     rm /Oya/pid/uart_recieve
-     ;;
-   esac
+    get)
+    pid=`cat /Oya/pid/uart_process`
+    echo ${pid}
+    ;;
+    remove)
+    rm /Oya/pid/uart_process
+    ;;
+    esac
   ;;
-  esac
-;;
 esac

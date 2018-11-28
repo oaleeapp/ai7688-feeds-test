@@ -4,6 +4,11 @@ import time
 
 ser=serial.Serial('/dev/ttyS0',115200)
 
+pid = str(os.getpid())
+pidFile = "/Oya/pid/uart_process"
+
+file(pidFile, 'w').write(pid)
+
 def main():
     while (1):
         input=ser.read()

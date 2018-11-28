@@ -4,17 +4,13 @@ START=99
 STOP=99
 
 start() {
-  sh /Oya/uart/uart_recieve.sh
-  sh /Oya/uart/uart_process.sh
+  python /Oya/uart/uart_process.py
 }
 
 stop() {
-  processpid=`uart pid process get`
-  recievepid=`uart pid recieve get`
-  kill -9 ${processpid}
-  kill -9 ${recievepid}
-  uart pid process remove
-  uart pid recieve remove
+  uartpid=`uart pid get`
+  kill -9 ${uartpid}
+  uart pid remove
 }
 
 boot() {
