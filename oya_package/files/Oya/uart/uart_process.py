@@ -1,6 +1,7 @@
 import serial
 import subprocess
 import time
+import os
 
 ser=serial.Serial('/dev/ttyS0',115200)
 
@@ -11,14 +12,21 @@ file(pidFile, 'w').write(pid)
 
 def main():
     while (1):
-        input=ser.read()
-        if(int(input) == 1):
-            print("mute")
-            #subprocess.call(['state','mute','set','1'])
-            #subprocess.call(['state','mute','commit'])
-        if(int(input) == 2):
-            print("poweroff")
-            #subprocess.call(['poweroff'])
+        input=ser.read(1)
+        if(input == '\x81'):
+            #print("mute")
+            s=subprocess.call(['state','mute','get'])
+            if(str(s) == "0"):
+                #print("mute toggle to 1")
+                subprocess.call(['state','mute','set','1'])
+                subprocess.call(['state','mute','commit'])
+            if(str(s) == "1"):
+                #print("mute toggel to 0")
+                subprocess.call(['state','mute','set','0'])
+                subprocess.call(['state','mute','commit'])
+        if(input == '\x82'):
+            #print("poweroff")
+            subprocess.call(['poweroff'])
 
 if __name__ == "__main__":
     main()

@@ -28,6 +28,14 @@ pid)
   esac
   ;;
 commit)
+
+  curState=`internet_status connected get`
+  if [ ${curState} == "1" ]; then
+    wifi_mode ap
+  elif [ ${curState} == "0" ]; then
+    wifi_mode apsta
+  fi
+
   /etc/init.d/uploading restart
   /etc/init.d/islinked restart
   /etc/init.d/mqtt restart

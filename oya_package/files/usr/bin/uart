@@ -2,11 +2,12 @@
 
 case $1 in
 send)
-  echo -e $2 > /dev/ttyS2
-  ;;
-read)
-  uartcommand=`cat /Oya/uart/uartcommand`
-  echo ${uartcommand}
+  counter=1
+  until [ $counter -gt 5 ]
+  do
+    echo -e $2 > /dev/ttyS0
+    ((counter++))
+  done
   ;;
 pid)
  case $2 in
