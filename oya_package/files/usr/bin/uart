@@ -2,12 +2,10 @@
 
 case $1 in
 send)
-  counter=1
-  until [ $counter -gt 5 ]
-  do
-    echo -e $2 > /dev/ttyS0
-    ((counter++))
-  done
+  for i in `seq 1 10`;
+    do
+      echo -e $2 > /dev/ttyS0
+    done
   ;;
 pid)
  case $2 in
