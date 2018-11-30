@@ -16,6 +16,7 @@ def main():
         if(input == '\x81'):
             #print("mute")
             s=subprocess.call(['state','mute','get'])
+            s=s.rstrip("\n")
             if(str(s) == "0"):
                 #print("mute toggle to 1")
                 subprocess.call(['state','mute','set','1'])
