@@ -1,0 +1,16 @@
+#!/bin/sh
+
+case $1 in
+url)
+  case $2 in
+  get)
+    otaurl=`cat /Oya/ota/otaurl`
+    echo ${otaurl}
+  ;;
+  set)
+    otaurl=$3
+    echo ${otaurl} > /Oya/ota/otaurl
+  ;;
+  esac
+;;
+esac
