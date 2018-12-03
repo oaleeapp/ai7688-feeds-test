@@ -21,6 +21,7 @@ import time
 import argparse
 import json
 import os
+import subprocess
 
 AllowedActions = ['both', 'publish', 'subscribe']
 
@@ -31,12 +32,22 @@ file(pidFile, 'w').write(pid)
 
 # Custom MQTT message callback
 def customCallback(client, userdata, message):
+"""
     print("Received a new message: ")
     print(message.payload)
     print("from topic: ")
     print(message.topic)
     print("--------------\n\n")
+"""
+    command=message.payload['command']
+    if (command == "OTA"):
+        subprocess.call(['sh','/Oya/ota/ota.sh'])
     return
+
+#subscribe
+def mqttSubscribe():
+    myAWSIoTMQTTClient.subscribe(topic, 1, customCallback)
+    time.sleep(2)
 
 def get_state(s_file):
     try:
@@ -160,6 +171,7 @@ try:
 except Exception as inst:
     print("Exception at connect")
 
+mqttSubscribe()
 time.sleep(2)
 
 
@@ -191,6 +203,7 @@ while True:
         except Exception as inst:
             print("Exception thrown at publish(): ", inst)
             myAWSIoTMQTTClient.connect()
+            mqttSubscribe()
             time.sleep(2)
             myAWSIoTMQTTClient.publish(topic, messageJson, 1)
 
