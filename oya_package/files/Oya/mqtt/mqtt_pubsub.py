@@ -40,8 +40,16 @@ def customCallback(client, userdata, message):
     print("--------------\n\n")
 """
     command=message.payload['command']
+    
     if (command == "OTA"):
         subprocess.call(['sh','/Oya/ota/ota.sh'])
+    elif (command == "MUTE"):
+        subprocess.call(['state','mute','set','1'])
+        subprocess.call(['state','mute','commit'])
+    elif (command == "UNMUTE"):
+        subprocess.call(['state','mute','set','0'])
+        subprocess.call(['state','mute','commit'])
+
     return
 
 #subscribe
