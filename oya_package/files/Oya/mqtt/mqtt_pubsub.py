@@ -45,7 +45,7 @@ def customCallback(client, userdata, message):
     return
 
 #subscribe
-def mqttSubscribe():
+def mqttSubscribe(topic):
     myAWSIoTMQTTClient.subscribe(topic, 1, customCallback)
     time.sleep(2)
 
@@ -170,14 +170,14 @@ try:
     myAWSIoTMQTTClient.connect()
 except Exception as inst:
     print("Exception at connect")
-
-mqttSubscribe()
+topic = "dummyres/status/"+clientId
+mqttSubscribe(topic)
 time.sleep(2)
 
 
 # Publish to the same topic in a loop forever
 loopCount = 0
-topic = "dummyres/status/"+clientId
+
 while True:
     if args.mode == 'both' or args.mode == 'publish':
         message = {
