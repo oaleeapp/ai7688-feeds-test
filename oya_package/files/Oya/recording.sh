@@ -19,7 +19,7 @@ do
     fileName=$(get_filename "$i")
     arecord -f s16_le -r16000 -c2 -t wav -M $recDestination$fileName & arpid=$!; recording apid set $arpid
     sleep $recDuration
-    mv $recDestination$fileName $uploadAudio$fileName
+    mv $recDestination$fileName $uploadDirectory$fileName
     kill `recording apid get`
     i=$((i+1))
 done
