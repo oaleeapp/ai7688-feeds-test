@@ -5,7 +5,7 @@ PKG_NAME:=urllib3
 PKG_VERSION:=1.24.1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:https://files.pythonhosted.org/packages/b1/53/37d82ab391393565f2f831b8eedbffd57db5a718216f82f1a8b4d381a1c1
+PKG_SOURCE_URL:=https://files.pythonhosted.org/packages/b1/53/37d82ab391393565f2f831b8eedbffd57db5a718216f82f1a8b4d381a1c1
 PKG_BUILD_DEPENDS:=python
 
 include $(INCLUDE_DIR)/package.mk

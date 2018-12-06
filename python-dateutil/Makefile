@@ -5,7 +5,7 @@ PKG_NAME:=python-dateutil
 PKG_VERSION:=2.7.5
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:https://files.pythonhosted.org/packages/0e/01/68747933e8d12263d41ce08119620d9a7e5eb72c876a3442257f74490da0
+PKG_SOURCE_URL:=https://files.pythonhosted.org/packages/0e/01/68747933e8d12263d41ce08119620d9a7e5eb72c876a3442257f74490da0
 PKG_BUILD_DEPENDS:=python
 
 include $(INCLUDE_DIR)/package.mk

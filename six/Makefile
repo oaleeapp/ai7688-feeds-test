@@ -5,7 +5,7 @@ PKG_NAME:=six
 PKG_VERSION:=3.2.0
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:https://files.pythonhosted.org/packages/16/d8/bc6316cf98419719bd59c91742194c111b6f2e85abac88e496adefaf7afe
+PKG_SOURCE_URL:=https://files.pythonhosted.org/packages/16/d8/bc6316cf98419719bd59c91742194c111b6f2e85abac88e496adefaf7afe
 PKG_BUILD_DEPENDS:=python
 
 include $(INCLUDE_DIR)/package.mk

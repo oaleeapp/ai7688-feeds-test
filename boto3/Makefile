@@ -5,7 +5,7 @@ PKG_NAME:=boto3
 PKG_VERSION:=1.9.60
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:https://files.pythonhosted.org/packages/fe/ea/3f0dedaf1b733908a171c2aa24d322ad18c1aee171afff88a7b9e843d845
+PKG_SOURCE_URL:=https://files.pythonhosted.org/packages/fe/ea/3f0dedaf1b733908a171c2aa24d322ad18c1aee171afff88a7b9e843d845
 PKG_BUILD_DEPENDS:=python
 
 include $(INCLUDE_DIR)/package.mk

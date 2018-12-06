@@ -5,7 +5,7 @@ PKG_NAME:=docutils
 PKG_VERSION:=0.14
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:https://files.pythonhosted.org/packages/84/f4/5771e41fdf52aabebbadecc9381d11dea0fa34e4759b4071244fa094804c
+PKG_SOURCE_URL:=https://files.pythonhosted.org/packages/84/f4/5771e41fdf52aabebbadecc9381d11dea0fa34e4759b4071244fa094804c
 PKG_BUILD_DEPENDS:=python
 
 include $(INCLUDE_DIR)/package.mk
