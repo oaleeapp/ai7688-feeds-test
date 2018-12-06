@@ -3,7 +3,7 @@
 otaurl=`ota url get`
 
 #downlaod the .bin file
-wget ${otaurl} -O /tmp/openwrt-ramips-mt7688-LinkIt7688-squashfs-sysupgrade.bin
+curl ${otaurl} --output /tmp/openwrt-ramips-mt7688-LinkIt7688-squashfs-sysupgrade.bin
 
 #stop all running processes
 /etc/init.d/recording stop
@@ -14,7 +14,6 @@ wget ${otaurl} -O /tmp/openwrt-ramips-mt7688-LinkIt7688-squashfs-sysupgrade.bin
 /etc/init.d/uart stop
 
 #save relevent configuration to a .config file
-
 
 sleep 1
 #use sysupgrade to update the firmware

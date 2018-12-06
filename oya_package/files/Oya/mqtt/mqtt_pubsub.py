@@ -40,7 +40,7 @@ def customCallback(client, userdata, message):
     print("--------------\n\n")
 """
     command=message.payload['command']
-    
+
     if (command == "OTA"):
         subprocess.call(['sh','/Oya/ota/ota.sh'])
     elif (command == "MUTE"):

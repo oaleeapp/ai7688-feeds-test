@@ -4,8 +4,10 @@ case $1 in
 url)
   case $2 in
   get)
-    otaurl=`cat /Oya/ota/otaurl`
-    echo ${otaurl}
+  otaurl=`curl https://33tdp18pe6.execute-api.ap-southeast-1.amazonaws.com/dev/ota`
+  otaurl="${otaurl%\"}"
+  otaurl="${otaurl#\"}"
+  echo ${otaurl}
   ;;
   set)
     otaurl=$3
