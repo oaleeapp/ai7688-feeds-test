@@ -41,7 +41,10 @@ def customCallback(client, userdata, message):
 """
     command=message.payload['command']
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of a5654c0... mqtt subscribe with ota and mute commands #1
 =======
 >>>>>>> parent of a5654c0... mqtt subscribe with ota and mute commands #1
     if (command == "OTA"):
