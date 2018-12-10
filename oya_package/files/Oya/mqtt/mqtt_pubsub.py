@@ -40,16 +40,12 @@ def customCallback(client, userdata, message):
     print("--------------\n\n")
 """
     command=message.payload['command']
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of a5654c0... mqtt subscribe with ota and mute commands #1
     if (command == "OTA"):
         subprocess.call(['sh','/Oya/ota/ota.sh'])
-    elif (command == "MUTE"):
-        subprocess.call(['state','mute','set','1'])
-        subprocess.call(['state','mute','commit'])
-    elif (command == "UNMUTE"):
-        subprocess.call(['state','mute','set','0'])
-        subprocess.call(['state','mute','commit'])
-
     return
 
 #subscribe
