@@ -32,13 +32,6 @@ file(pidFile, 'w').write(pid)
 
 # Custom MQTT message callback
 def customCallback(client, userdata, message):
-"""
-    print("Received a new message: ")
-    print(message.payload)
-    print("from topic: ")
-    print(message.topic)
-    print("--------------\n\n")
-"""
     command=message.payload['command']
     if (command == "OTA"):
         subprocess.call(['sh','/Oya/ota/ota.sh'])
