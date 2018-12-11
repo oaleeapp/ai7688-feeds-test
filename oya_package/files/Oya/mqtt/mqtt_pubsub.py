@@ -40,13 +40,6 @@ def customCallback(client, userdata, message):
     print("--------------\n\n")
 """
     command=message.payload['command']
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of a5654c0... mqtt subscribe with ota and mute commands #1
-=======
->>>>>>> parent of a5654c0... mqtt subscribe with ota and mute commands #1
     if (command == "OTA"):
         subprocess.call(['sh','/Oya/ota/ota.sh'])
     return
@@ -177,6 +170,7 @@ try:
     myAWSIoTMQTTClient.connect()
 except Exception as inst:
     print("Exception at connect")
+
 topic = "dummyres/status/"+clientId
 mqttSubscribe(topic)
 time.sleep(2)
@@ -210,7 +204,7 @@ while True:
         except Exception as inst:
             print("Exception thrown at publish(): ", inst)
             myAWSIoTMQTTClient.connect()
-            mqttSubscribe()
+            mqttSubscribe(topic)
             time.sleep(2)
             myAWSIoTMQTTClient.publish(topic, messageJson, 1)
 
