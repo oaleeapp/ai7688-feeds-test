@@ -8,10 +8,6 @@ internet_commit
 
 /etc/init.d/internet_status start
 
-/etc/init.d/flask_server start
-
-sleep 5
-
-/etc/init.d/uart start
+/etc/init.d/uart restart
 
 exit 0

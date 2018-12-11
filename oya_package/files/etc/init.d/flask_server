@@ -18,5 +18,5 @@ stop() {
 
 boot() {
 	/etc/init.d/flask_server enable
-#  /etc/init.d/flask_server start
+  /etc/init.d/flask_server start
 }
