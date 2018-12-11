@@ -32,9 +32,13 @@ file(pidFile, 'w').write(pid)
 
 # Custom MQTT message callback
 def customCallback(client, userdata, message):
-    command=message.payload['command']
-    if (command == "OTA"):
-        subprocess.call(['sh','/Oya/ota/ota.sh'])
+    try:
+        command=message.payload['command']
+        if (command == "OTA"):
+            subprocess.call(['sh','/Oya/ota/ota.sh'])
+    except:
+        print("Exception at custom callback")
+        
     return
 
 #subscribe
@@ -165,7 +169,8 @@ except Exception as inst:
     print("Exception at connect")
 
 topic = "dummyres/status/"+clientId
-mqttSubscribe(topic)
+subtopic="dummyres/command/"+clientId
+mqttSubscribe(subtopic)
 time.sleep(2)
 
 
@@ -196,9 +201,12 @@ while True:
             myAWSIoTMQTTClient.publish(topic, messageJson, 1)
         except Exception as inst:
             print("Exception thrown at publish(): ", inst)
-            myAWSIoTMQTTClient.connect()
-            mqttSubscribe(topic)
-            time.sleep(2)
-            myAWSIoTMQTTClient.publish(topic, messageJson, 1)
+            try:
+                myAWSIoTMQTTClient.connect()
+                mqttSubscribe(subtopic)
+                time.sleep(2)
+                myAWSIoTMQTTClient.publish(topic, messageJson, 1)
+            except:
+                print("Exception")
 
     time.sleep(10)
