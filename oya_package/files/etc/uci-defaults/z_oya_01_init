@@ -27,4 +27,6 @@ chmod +x /etc/init.d/uart
 chmod +x /usr/bin/flask_server
 chmod +x /etc/init.d/flask_server
 
+chmod +x /usr/bin/ota
+
 exit 0
