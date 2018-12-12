@@ -8,6 +8,6 @@ internet_commit
 
 /etc/init.d/internet_status start
 
-/etc/init.d/uart restart
+#/etc/init.d/uart restart
 
 exit 0
