@@ -2,6 +2,7 @@
 
 #Flask server that helps user on-board
 #Must start on boot
+#Stop function gets pid and kills the process
 
 START=97
 STOP=99

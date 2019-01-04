@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Checks for files in the flash memory (which is where it was designed to be saved if the SD card failed (SD card check not implemented)) and the SD card
+# and uploads to the API dummyres on the backend
+
+# Refer to '/usr/bin/uploading' and `/etc/init.d/uploading` for more information
+
 (
 uploadRootDirectory="/root/uploadAudio"
 uploadSDDirectory="/Media/SD-P1/uploadAudio"

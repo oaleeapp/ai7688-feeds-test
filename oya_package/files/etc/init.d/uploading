@@ -3,6 +3,8 @@
 START=99
 STOP=99
 
+# Uploading starts only when the device is linked to the user on the backend (defaulted to true on this version of the firmware) and connected to the internet
+
 start() {
   islinked=`state islinked get`
   internet_status=`internet_status connected get`

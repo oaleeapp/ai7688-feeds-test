@@ -3,6 +3,8 @@
 START=99
 STOP=99
 
+#The python file is still incomplete, however, still works to send LED states.
+
 start() {
   python /Oya/uart/uart_process.py
 }

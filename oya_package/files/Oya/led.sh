@@ -1,4 +1,11 @@
 #!bin/sh
+
+# Sends UART message to control LEDs on the MCU with 4 bits
+# first bit - islinked
+# second bit - mute (not recording)
+# third bit - internet connection status
+# fourth bit - recording (irrelevant, as it is represented by the second bit as well.)
+
 islinked=`state islinked get` #8
 mute=`state mute get` #4
 internet_status=`internet_status connected get` #2

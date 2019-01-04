@@ -3,6 +3,8 @@
 START=99
 STOP=99
 
+#To create base files and directories
+
 start() {
 
 }

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Gets the duration set for recording and destination folder for saving the recorded files from the relevant config files
+# Records for the set duration and saves the filename in the format deviceID_timestamp_serialnumber.wav
+# Config files are saved under /Oya/recording
+# refer to /usr/bin/recording for information on `recording duration get` and `recording destination get` functions
+
+
 get_filename() {
   DID=`device_id get`
   datetime=`date +%s`

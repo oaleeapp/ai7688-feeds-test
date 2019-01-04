@@ -3,6 +3,10 @@
 START=99
 STOP=99
 
+
+# Recording function starts only when the device isLinked to a user on the backend and it is not set to mute (is linked is not implemented and is defaulted to true on this version of the firmware)
+# Stop fuction kills the recording process, also `arecord` process, in case `arecord` is still functioning and removes the PID files
+
 start() {
   islinked=`state islinked get`
   mute=`state mute get`

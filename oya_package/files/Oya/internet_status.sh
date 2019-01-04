@@ -1,6 +1,11 @@
 
 #!/bin/sh
 
+# Checks the internet connection state by pinging google.com every 5 seconds
+# and writes the change in interent state by calling the relevant commands
+
+# Refer /usr/bin/internet_status and /etc/init.d/internet_status for more information.
+
 write_status() {
   internetStatus=`internet_status connected get`
   if [ "${internetStatus}" != "$2" ]; then

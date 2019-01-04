@@ -3,6 +3,9 @@
 START=99
 STOP=99
 
+#MQTT process starts only when the device is connected to the interent
+#stop function gets the PID, kills the process and removes the PID file.
+
 start() {
   internet_status=`internet_status connected get`
   if [ ${internet_status} == "1" ]; then
